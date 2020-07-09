@@ -18,12 +18,19 @@ public class Player : KinematicBody2D
 	Vector2 destination = new Vector2();
 	Vector2 movement = new Vector2();
 
+	
+	//Vector2 cellPos = new Vector2();
+
 	public override void _UnhandledInput(InputEvent @event)
 	{
 		if (Input.IsActionPressed("touch"))
 		{
 			moving = true;
-			destination = GetGlobalMousePosition();
+			
+			var tileMap = GetNode("World");
+			
+			var mousePos = GetLocalMousePosition();
+			//destination = TileMap.
 		}
 	}
 
