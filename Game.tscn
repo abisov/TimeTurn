@@ -40,7 +40,7 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2( 889.083, 416.815 )
+position = Vector2( 897.083, 415.815 )
 rotation = -2.09439
 scale = Vector2( 8.85562, 0.492136 )
 __meta__ = {
