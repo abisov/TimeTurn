@@ -6,11 +6,13 @@ public class Player : KinematicBody2D
 	[Export]
 	public float maxSpeed = 250;
 	
-	public float speed = 0;
-	
 	[Export]
 	public int acceleration = 1200;
-	
+
+	public float speed = 0;
+
+
+
 	float moveDirection;
 	bool moving = false;
 	Vector2 destination = new Vector2();
@@ -18,7 +20,7 @@ public class Player : KinematicBody2D
 
 	public override void _UnhandledInput(InputEvent @event)
 	{
-		if(Input.IsActionPressed("touch"))
+		if (Input.IsActionPressed("touch"))
 		{
 			moving = true;
 			destination = GetGlobalMousePosition();
@@ -39,10 +41,10 @@ public class Player : KinematicBody2D
 				speed = maxSpeed;
 			}
 		}
-		
+
 		movement = Position.DirectionTo(destination) * speed;
 		moveDirection = Mathf.Rad2Deg(destination.AngleToPoint(Position));
-		
+
 		if (Position.DistanceTo(destination) > 5)
 		{
 			movement = MoveAndSlide(movement);
@@ -52,18 +54,16 @@ public class Player : KinematicBody2D
 			moving = false;
 		}
 	}
-	
+
 	public override void _PhysicsProcess(float delta)
 	{
 		Movement(delta);
 	}
-	
+
 	//  // Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(float delta)
 	{
-		
-		
-		
+
 	}
 
 }
